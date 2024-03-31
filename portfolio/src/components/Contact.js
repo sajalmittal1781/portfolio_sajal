@@ -142,7 +142,10 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('portfolio-sajal-v4xs.vercel.app/send-email', formData);
+      const apiUrl = process.env.REACT_APP_API_URL; // Get API URL from environment variable
+      console.log('API URL:', apiUrl);
+      await axios.post(apiUrl, formData);
+      // await axios.post('https://portfolio-sajal-v4xs.vercel.app/send-email', formData);
       toast.info('Email sent successfully');
     } catch (error) {
       console.error('Error sending email:', error);
