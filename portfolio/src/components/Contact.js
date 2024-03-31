@@ -23,6 +23,11 @@ const Contact = () => {
       const apiUrl = process.env.REACT_APP_API_URL;
       await axios.post(apiUrl, formData);
       toast.info("Email sent successfully");
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
     } catch (error) {
       console.error("Error sending email:", error);
       toast.info("Error sending email");
@@ -54,6 +59,7 @@ const Contact = () => {
             Your Name
           </label>
           <input
+          value={formData.name}
             name="name"
             onChange={handleChange}
             type="text"
@@ -67,6 +73,7 @@ const Contact = () => {
             Your Email
           </label>
           <input
+          value={formData.email}
             name="email"
             type="email"
             id="email"
@@ -84,6 +91,7 @@ const Contact = () => {
             Your Message
           </label>
           <textarea
+          value={formData.message}
             name="message"
             onChange={handleChange}
             style={{ color: "#EEEEEE", backgroundColor: grey, resize: "none" }}
