@@ -59,12 +59,13 @@ const Contact = () => {
             Your Name
           </label>
           <input
-          value={formData.name}
+            required
+            value={formData.name}
             name="name"
             onChange={handleChange}
             type="text"
             id="name"
-            style={{ backgroundColor: grey }}
+            style={{  color: "#EEEEEE",backgroundColor: grey }}
             className="rounded-3xl p-4 w-full"
             placeholder="Name"
           />
@@ -73,12 +74,13 @@ const Contact = () => {
             Your Email
           </label>
           <input
-          value={formData.email}
+            required
+            value={formData.email}
             name="email"
             type="email"
             id="email"
             onChange={handleChange}
-            style={{ backgroundColor: grey }}
+            style={{  color: "#EEEEEE",backgroundColor: grey }}
             className="rounded-3xl p-4 w-full"
             placeholder="Email"
           />
@@ -91,7 +93,8 @@ const Contact = () => {
             Your Message
           </label>
           <textarea
-          value={formData.message}
+            required
+            value={formData.message}
             name="message"
             onChange={handleChange}
             style={{ color: "#EEEEEE", backgroundColor: grey, resize: "none" }}
