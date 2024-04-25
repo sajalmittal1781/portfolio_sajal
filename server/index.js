@@ -8,9 +8,13 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors());
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
+
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
 
 app.post("/send-email", (req, res) => {
   const { name, email, message } = req.body;
