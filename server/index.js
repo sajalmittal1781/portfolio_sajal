@@ -7,7 +7,11 @@ const cors = require("cors");
 
 
 const app = express();
-app.use(cors());
+const allowedOrigins = ['http://localhost:3000','https://portfolio-sajal.vercel.app'];
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
 const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
